@@ -5,205 +5,387 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mustafi Studio – Foto & Video</title>
 <meta name="description" content="Mustafi Studio – Fotograf und Videograf für Hochzeiten, Events, Porträts, Immobilien und Drohnenaufnahmen in der Schweiz und im Kosovo.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Mustafi Studio – Your Photo and Videographer">
+<meta property="og:description" content="Foto & Video für Hochzeiten, Events, Porträts und Orte – Schweiz & Kosovo.">
+<meta property="og:image" content="img/pf/w9.jpg">
+<link rel="canonical" href="https://ado-prog.github.io/mustafi-studio/">
 <link rel="icon" type="image/png" href="img/logo_mark.png">
+<link rel="preload" as="image" href="img/hero-poster.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Mustafi Studio",
+  "slogan": "Your Photo and Videographer",
+  "description": "Foto und Video für Hochzeiten, Events, Porträts, Immobilien und Drohnenaufnahmen in der Schweiz und im Kosovo.",
+  "url": "https://ado-prog.github.io/mustafi-studio/",
+  "logo": "https://ado-prog.github.io/mustafi-studio/img/logo_full.png",
+  "image": "https://ado-prog.github.io/mustafi-studio/img/pf/w9.jpg",
+  "telephone": ["+41798288648", "+38343822020"],
+  "areaServed": ["CH", "XK"],
+  "knowsLanguage": ["de", "sq", "bs", "en"],
+  "founder": { "@type": "Person", "name": "Adis Mustafi" },
+  "sameAs": ["https://www.instagram.com/mustafi.studio/", "https://www.youtube.com/@MustafiStudio"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f0f10;
-    --bg-2: #17171a;
-    --line: #2a2a2e;
-    --text: #f2f0ec;
-    --muted: #a8a49c;
+    --ink: #1d1d1f;
+    --muted: #6e6e73;
+    --faint: #86868b;
+    --bg: #ffffff;
+    --gray: #f5f5f7;
+    --line: #d2d2d7;
     --red: #e31e24;
-    --red-dark: #a50e14;
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: "Inter", system-ui, -apple-system, sans-serif;
+    --red-dark: #c4161c;
+    --red-light: #ff4f55;
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Inter, Arial, sans-serif;
+    --ease: cubic-bezier(.28, .11, .32, 1);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-  img { display: block; max-width: 100%; }
+  html { scroll-behavior: smooth; scroll-padding-top: 44px; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 17px; line-height: 1.47; letter-spacing: -.022em; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img, video { display: block; max-width: 100%; }
   [hidden] { display: none !important; }
   a { color: inherit; text-decoration: none; }
-  .wrap { width: min(1200px, 100% - 32px); margin-inline: auto; }
+  button, input, select, textarea { font: inherit; color: inherit; letter-spacing: inherit; }
+  .wrap { width: min(980px, 100% - 32px); margin-inline: auto; }
 
-  /* Navigation */
-  header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
-  header.scrolled { background: rgba(15,15,16,.92); backdrop-filter: blur(10px); border-color: var(--line); }
-  .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
-  .nav .brand img { height: 40px; width: auto; }
-  .nav ul { display: flex; gap: 28px; list-style: none; font-size: 14px; letter-spacing: .04em; }
-  .nav ul a { color: var(--muted); transition: color .2s; }
-  .nav ul a:hover { color: var(--text); }
-  .langs { display: flex; gap: 4px; }
-  .langs button { background: none; border: 1px solid transparent; color: var(--muted); font: 600 12px var(--sans); letter-spacing: .06em; padding: 6px 8px; border-radius: 4px; cursor: pointer; }
-  .langs button.active { color: var(--text); border-color: var(--line); }
-  .menu-btn { display: none; background: none; border: 0; color: var(--text); font-size: 26px; cursor: pointer; }
+  /* Globalna navigacija */
+  .gnav { position: sticky; top: 0; z-index: 50; height: 44px; background: rgba(250, 250, 252, .8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0, 0, 0, .06); }
+  .gnav .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+  .gnav .brand img { height: 18px; width: auto; }
+  .gnav ul { display: flex; gap: 34px; list-style: none; font-size: 12px; letter-spacing: -.01em; }
+  .gnav ul a { color: rgba(0, 0, 0, .8); transition: color .2s; }
+  .gnav ul a:hover { color: #000; }
+  .gnav .right { display: flex; align-items: center; gap: 14px; }
+  .langs { display: flex; gap: 2px; }
+  .langs button { background: none; border: 0; font-size: 11px; font-weight: 500; color: var(--faint); padding: 3px 5px; border-radius: 4px; cursor: pointer; }
+  .langs button.active { color: var(--ink); background: rgba(0, 0, 0, .06); }
+  .gnav .cta { font-size: 12px; font-weight: 500; background: var(--red); color: #fff; padding: 4px 11px; border-radius: 980px; }
+  .menu-btn { display: none; background: none; border: 0; width: 32px; height: 32px; cursor: pointer; position: relative; }
+  .menu-btn span, .menu-btn::before { content: ""; position: absolute; left: 9px; right: 9px; height: 1.2px; background: var(--ink); transition: transform .3s var(--ease); }
+  .menu-btn::before { top: 12px; } .menu-btn span { top: 19px; }
+  .menu-open .menu-btn::before { transform: translateY(3.5px) rotate(45deg); }
+  .menu-open .menu-btn span { transform: translateY(-3.5px) rotate(-45deg); }
+
+  /* Pločice */
+  .tiles { display: grid; gap: 12px; padding: 12px; }
+  .tile { position: relative; overflow: hidden; height: 692px; text-align: center; background: var(--gray) center bottom / cover no-repeat; display: flex; flex-direction: column; align-items: center; }
+  .tile.dark { background-color: #000; color: #f5f5f7; }
+  .tile::before { content: ""; position: absolute; inset: 0; background: linear-gradient(var(--fade) 0%, var(--fade) 18%, transparent 55%); pointer-events: none; --fade: rgba(245, 245, 247, .96); }
+  .tile.dark::before { --fade: rgba(0, 0, 0, .88); }
+  .tile .txt { position: relative; z-index: 1; padding: 52px 20px 0; }
+  .tile h2 { font-size: 56px; line-height: 1.07; font-weight: 600; letter-spacing: -.005em; }
+  .tile h3 { font-size: 28px; line-height: 1.14; font-weight: 400; letter-spacing: .007em; margin-top: 6px; }
+  .tile p.sub { font-size: 21px; line-height: 1.38; margin-top: 4px; max-width: 34ch; margin-inline: auto; }
+  .tile .links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .pill { display: inline-block; font-size: 17px; line-height: 1.17; padding: 11px 21px; border-radius: 980px; border: 1px solid var(--red); background: var(--red); color: #fff; transition: background .2s, color .2s, border-color .2s; cursor: pointer; }
+  .pill:hover { background: var(--red-dark); border-color: var(--red-dark); }
+  .pill.ghost { background: transparent; color: var(--red); }
+  .pill.ghost:hover { background: var(--red); color: #fff; }
+  .dark .pill.ghost { color: var(--red-light); border-color: var(--red-light); }
+  .dark .pill.ghost:hover { background: var(--red-light); color: #000; }
+  .tile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tile-grid .tile { height: 580px; }
+  .tile-grid .tile h2 { font-size: 40px; line-height: 1.1; }
+  .tile-grid .tile p.sub { font-size: 19px; }
+  .tile-grid .tile .pill { font-size: 14px; padding: 8px 15px; }
 
   /* Hero */
-  .hero { min-height: 100vh; display: grid; align-content: center; position: relative; overflow: hidden; background: #0b0c0c url(img/hero-poster.jpg) center / cover; }
-  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,11,.92) 0%, rgba(10,10,11,.75) 45%, rgba(10,10,11,.35) 100%), linear-gradient(0deg, var(--bg) 0%, transparent 25%); }
-  .hero-text { position: relative; z-index: 1; padding: 120px 48px 64px max(16px, calc((100vw - 1200px) / 2)); }
-  @media (prefers-reduced-motion: reduce) { .hero video { display: none; } }
-  .hero-logo { display: block; width: min(420px, 100%); height: auto; margin-bottom: 14px; }
-  .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 5vw, 64px); line-height: 1.08; margin-bottom: 20px; }
-  .hero h1 em { color: var(--red); }
-  .hero p { color: var(--muted); max-width: 46ch; font-size: 17px; margin-bottom: 36px; }
-  .btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-block; padding: 14px 26px; border-radius: 2px; font-size: 14px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; transition: background .2s, border-color .2s; }
-  .btn-red { background: var(--red); color: #fff; }
-  .btn-red:hover { background: var(--red-dark); }
-  .btn-line { border: 1px solid var(--line); }
-  .btn-line:hover { border-color: var(--text); }
+  .hero::before { display: none; }
+  .hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(#000 0%, rgba(0, 0, 0, .8) 32%, rgba(0, 0, 0, .1) 68%, rgba(0, 0, 0, .35) 100%); }
+  .hero .txt { padding-top: 60px; }
+  .hero .mark { width: 92px; height: auto; margin: 0 auto 18px; }
+  .hero h1 { font-size: 80px; line-height: 1.05; font-weight: 600; letter-spacing: -.015em; }
+  .hero .tagline { font-size: 21px; color: var(--red-light); font-weight: 500; margin-top: 2px; }
+  .hero p.sub { color: #a1a1a6; max-width: 40ch; margin-top: 14px; }
+  @media (prefers-reduced-motion: reduce) { .hero video { display: none; } .hero { background: #000 url(img/hero-poster.jpg) center 60% / cover; } }
 
-  /* Sections */
-  section { padding: 110px 0; }
-  .eyebrow { color: var(--red); font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 14px; }
-  h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin-bottom: 18px; }
-  .lead { color: var(--muted); max-width: 60ch; font-size: 17px; }
+  /* Sekcije */
+  section.block { padding: 110px 0; }
+  section.gray { background: var(--gray); }
+  .sec-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 40px; }
+  .sec-head h2 { font-size: 48px; line-height: 1.08; font-weight: 600; letter-spacing: -.003em; }
+  .sec-head h2 span { color: var(--faint); }
+  .more { color: var(--red); font-size: 17px; white-space: nowrap; }
+  .more:hover { text-decoration: underline; }
+  .more::after { content: " ›"; }
 
-  /* Services */
-  .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
-  .service { background: var(--bg-2); border: 1px solid var(--line); overflow: hidden; }
-  .service .ph { aspect-ratio: 4 / 5; background-size: cover; background-position: center; transition: transform .6s; }
-  .service:hover .ph { transform: scale(1.04); }
-  .service div.txt { padding: 22px 22px 26px; position: relative; background: var(--bg-2); }
-  .service h3 { font-family: var(--serif); font-size: 26px; font-weight: 600; margin-bottom: 8px; }
-  .service p { color: var(--muted); font-size: 14.5px; }
+  /* Karusel */
+  .carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: max(16px, calc((100vw - 980px) / 2)); padding: 10px max(16px, calc((100vw - 980px) / 2)) 30px; scrollbar-width: none; }
+  .carousel::-webkit-scrollbar { display: none; }
+  .card { flex: none; width: 372px; height: 500px; border-radius: 18px; overflow: hidden; position: relative; scroll-snap-align: start; background: #000; box-shadow: 2px 4px 12px rgba(0, 0, 0, .08); transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+  .card:hover { transform: scale(1.015); box-shadow: 2px 4px 16px rgba(0, 0, 0, .16); }
+  .card img { width: 100%; height: 100%; object-fit: cover; }
+  .card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0, 0, 0, .55), transparent 30%); }
+  .card .cap { position: absolute; top: 26px; left: 26px; right: 26px; z-index: 1; color: #fff; }
+  .card .cap small { display: block; font-size: 12px; font-weight: 600; opacity: .85; }
+  .card .cap b { display: block; font-size: 24px; line-height: 1.17; font-weight: 600; margin-top: 4px; }
+  .card.wide { width: 620px; }
+  .car-ctrl { display: flex; justify-content: flex-end; gap: 14px; }
+  .car-ctrl button { width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(210, 210, 215, .64); color: rgba(0, 0, 0, .56); font-size: 22px; line-height: 1; cursor: pointer; transition: background .2s; }
+  .car-ctrl button:hover { background: rgba(223, 223, 227, .9); color: #000; }
 
-  /* Kako radim */
-  #process { background: var(--bg-2); border-block: 1px solid var(--line); }
-  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 56px; counter-reset: step; list-style: none; }
-  .steps li { position: relative; padding-top: 22px; border-top: 1px solid var(--line); }
-  .steps li::before { counter-increment: step; content: "0" counter(step); display: block; font-family: var(--serif); font-size: 40px; line-height: 1; color: var(--red); margin-bottom: 14px; }
-  .steps li::after { content: ""; position: absolute; top: -1px; left: 0; width: 40px; height: 2px; background: var(--red); }
-  .steps h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-  .steps p { color: var(--muted); font-size: 14.5px; }
+  /* O meni */
+  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .about .panel { background: #fff; border-radius: 18px; overflow: hidden; }
+  .about .intro { padding: 48px 44px; display: flex; flex-direction: column; justify-content: center; }
+  .about .intro small { font-size: 17px; font-weight: 600; color: var(--red); }
+  .about .intro h3 { font-size: 40px; line-height: 1.1; font-weight: 600; margin: 8px 0 18px; }
+  .about .intro p { color: var(--muted); }
+  .about .intro p + p { margin-top: 12px; }
+  .about .pic img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; min-height: 420px; }
+  .stats { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .stat { background: #fff; border-radius: 18px; padding: 30px 28px; }
+  .stat b { display: block; font-size: 40px; line-height: 1.1; font-weight: 600; background: linear-gradient(90deg, var(--red), #ff7a45); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat h4 { font-size: 17px; font-weight: 600; margin-top: 10px; }
+  .stat span { display: block; color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+  /* Proces */
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; list-style: none; counter-reset: s; }
+  .steps li { background: var(--gray); border-radius: 18px; padding: 28px 22px 32px; }
+  .steps li::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 26px; }
+  .steps h3 { font-size: 19px; line-height: 1.2; font-weight: 600; margin-bottom: 8px; }
+  .steps p { font-size: 14px; color: var(--muted); letter-spacing: -.01em; }
 
   /* FAQ */
-  .faq { max-width: 820px; margin-top: 40px; }
+  .faq { border-top: 1px solid var(--line); }
   .faq details { border-bottom: 1px solid var(--line); }
-  .faq summary { list-style: none; cursor: pointer; padding: 22px 40px 22px 0; position: relative; font-family: var(--serif); font-size: 22px; font-weight: 600; }
+  .faq summary { list-style: none; cursor: pointer; padding: 24px 44px 24px 0; position: relative; font-size: 21px; font-weight: 600; line-height: 1.3; }
   .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-family: var(--sans); font-weight: 400; font-size: 26px; color: var(--red); transition: transform .3s; }
+  .faq summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 28px; font-weight: 300; color: var(--muted); transition: transform .3s var(--ease); }
   .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
-  .faq details p { color: var(--muted); padding: 0 40px 24px 0; max-width: 64ch; }
+  .faq details p { color: var(--muted); padding: 0 44px 26px 0; max-width: 68ch; }
 
-  /* Portfolio */
-  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 40px 0 28px; }
-  .filters button { background: none; border: 1px solid var(--line); color: var(--muted); font: 500 13px var(--sans); letter-spacing: .04em; padding: 9px 18px; border-radius: 999px; cursor: pointer; transition: all .2s; }
-  .filters button.active, .filters button:hover { color: var(--text); border-color: var(--red); }
-  .grid { columns: 3 300px; column-gap: 14px; }
-  .grid figure { break-inside: avoid; margin-bottom: 14px; position: relative; overflow: hidden; background: var(--bg-2); }
-  .grid figure a { display: block; }
-  .grid figure img { width: 100%; height: auto; transition: transform .5s; }
-  .grid figure:hover img { transform: scale(1.04); }
-  .grid figure span { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: center; gap: 8px; padding: 40px 14px 12px; color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: linear-gradient(transparent, rgba(0,0,0,.7)); opacity: .8; transition: opacity .3s; }
-  .grid figure:hover span { opacity: 1; }
-  .grid figure span svg { width: 18px; height: 18px; fill: #fff; flex: none; }
-  .grid figure.hide { display: none; }
+  /* Kontakt */
+  .contact { display: grid; grid-template-columns: 1fr 1.15fr; gap: 12px; }
+  .contact .side { display: grid; gap: 12px; align-content: start; }
+  .channel { display: flex; align-items: center; gap: 16px; background: #fff; border-radius: 18px; padding: 22px 24px; transition: transform .3s var(--ease), box-shadow .3s; }
+  .channel:hover { transform: scale(1.01); box-shadow: 2px 4px 16px rgba(0, 0, 0, .08); }
+  .channel svg { width: 30px; height: 30px; fill: var(--red); flex: none; }
+  .channel small { display: block; font-size: 12px; color: var(--muted); }
+  .channel strong { font-size: 19px; font-weight: 600; }
+  .channel .arr { margin-left: auto; color: var(--faint); font-size: 22px; }
+  .form { background: #fff; border-radius: 18px; padding: 40px; }
+  .form h3 { font-size: 32px; line-height: 1.12; font-weight: 600; }
+  .form > p { color: var(--muted); font-size: 15px; margin: 6px 0 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .chips label { cursor: pointer; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips span { display: inline-block; padding: 8px 15px; border-radius: 980px; border: 1px solid var(--line); font-size: 14px; transition: all .2s; }
+  .chips input:checked + span { border-color: var(--red); background: rgba(227, 30, 36, .07); color: var(--red); box-shadow: inset 0 0 0 1px var(--red); }
+  .chips input:focus-visible + span { outline: 2px solid #0071e3; outline-offset: 2px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .field { margin-bottom: 12px; }
+  .field label { display: block; font-size: 12px; color: var(--muted); margin: 0 0 5px 2px; }
+  .field input, .field select, .field textarea { width: 100%; height: 52px; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 0 16px; font-size: 17px; transition: border-color .2s, box-shadow .2s; }
+  .field textarea { height: auto; min-height: 96px; padding: 14px 16px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 4px rgba(0, 113, 227, .15); }
+  .form .pill { width: 100%; margin-top: 8px; }
+  .form .note { text-align: center; color: var(--faint); font-size: 12px; margin-top: 12px; }
 
-  /* About */
-  .about { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-  .about-pics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .about-pics img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1; }
-  .about-pics img:first-child { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
-  .about p + p { margin-top: 16px; }
-  .gear { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-  .gear span { border: 1px solid var(--line); color: var(--muted); font-size: 13px; padding: 6px 12px; border-radius: 999px; }
+  /* Footer */
+  footer { background: var(--gray); color: var(--muted); font-size: 12px; letter-spacing: -.01em; padding: 30px 0 22px; }
+  footer .note { padding-bottom: 16px; border-bottom: 1px solid var(--line); line-height: 1.6; }
+  .fcols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .fcols h4 { color: var(--ink); font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+  .fcols a { display: block; margin-bottom: 7px; }
+  .fcols a:hover { color: var(--ink); text-decoration: underline; }
+  .flegal { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 16px; }
 
-  /* Contact */
-  #contact { background: var(--bg-2); border-top: 1px solid var(--line); }
-  .contact { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-  .cards { display: grid; gap: 14px; }
-  .card { display: flex; align-items: center; gap: 18px; padding: 20px 22px; border: 1px solid var(--line); background: var(--bg); transition: border-color .2s; }
-  .card:hover { border-color: var(--red); }
-  .card svg { width: 26px; height: 26px; flex: none; fill: var(--red); }
-  .card small { display: block; color: var(--muted); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
-  .card strong { font-weight: 500; font-size: 17px; }
+  /* Provjera datuma */
+  .check { background: var(--gray); text-align: center; padding: 40px 20px 44px; }
+  .check h2 { font-size: 32px; line-height: 1.12; font-weight: 600; }
+  .check p { color: var(--muted); margin-top: 4px; }
+  .check form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .check input { height: 46px; min-width: 210px; border: 1px solid var(--line); border-radius: 980px; padding: 0 20px; background: #fff; font-size: 17px; }
+  .check input:focus { outline: none; border-color: #0071e3; box-shadow: 0 0 0 4px rgba(0, 113, 227, .15); }
 
-  footer { padding: 36px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  /* Dostupnost */
+  .skip { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px; }
+  .skip:focus { top: 8px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #0071e3; outline-offset: 3px; border-radius: 4px; }
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s, transform .8s; }
-  .reveal.in { opacity: 1; transform: none; }
-
-  @media (max-width: 960px) {
-    .services { grid-template-columns: repeat(2, 1fr); }
-    .steps { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
-    .about, .contact { grid-template-columns: 1fr; gap: 40px; }
-    .hero-text { padding: 110px 16px 48px; }
-    .hero::after { background: linear-gradient(0deg, var(--bg) 0%, rgba(10,10,11,.7) 40%, rgba(10,10,11,.55) 100%); }
+  /* Traka na mobitelu */
+  .mbar { display: none; }
+  @media (max-width: 600px) {
+    .mbar { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(250, 250, 252, .86); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-top: 1px solid rgba(0, 0, 0, .08); transition: transform .35s var(--ease); }
+    .mbar .pill { text-align: center; padding: 11px 10px; }
+    .mbar.away { transform: translateY(110%); }
+    body { padding-bottom: 70px; }
   }
-  @media (max-width: 760px) {
+
+  /* Animacije */
+  .js .reveal { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } html { scroll-behavior: auto; } }
+
+  @media (max-width: 1068px) {
+    .tile { height: 620px; }
+    .tile h2 { font-size: 48px; }
+    .hero h1 { font-size: 64px; }
+    .tile-grid .tile { height: 500px; }
+    .tile-grid .tile h2 { font-size: 32px; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 834px) {
+    .gnav ul { display: none; position: fixed; top: 44px; left: 0; right: 0; bottom: 0; flex-direction: column; gap: 0; background: rgba(250, 250, 252, .98); padding: 18px 32px; }
+    .menu-open .gnav ul { display: flex; }
+    .gnav ul a { display: block; padding: 8px 0; font-size: 28px; font-weight: 600; color: var(--ink); }
     .menu-btn { display: block; }
-    .nav ul { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); }
-    .nav ul.open { display: flex; }
-    .nav ul a { display: block; padding: 16px; font-size: 16px; }
-    .nav .brand img { height: 32px; }
-    header { background: rgba(15,15,16,.92); }
-    section { padding: 80px 0; }
-    .services { grid-template-columns: 1fr; }
+    .gnav .cta { display: none; }
+    .tile-grid, .about, .contact { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .sec-head h2 { font-size: 40px; }
+    .card, .card.wide { width: 300px; height: 420px; }
+  }
+  @media (max-width: 600px) {
+    .tiles { padding: 0; }
+    .tile { height: 560px; }
+    .tile .txt { padding-top: 44px; }
+    .tile h2, .tile-grid .tile h2 { font-size: 32px; }
+    .tile h3 { font-size: 21px; }
+    .tile p.sub, .tile-grid .tile p.sub { font-size: 17px; }
+    .tile-grid .tile { height: 500px; }
+    .pill { font-size: 15px; padding: 9px 18px; }
+    .hero { height: 640px; }
+    .hero h1 { font-size: 44px; }
+    .hero .mark { width: 72px; }
+    .hero .tagline { font-size: 17px; }
+    section.block { padding: 72px 0; }
+    .sec-head { flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 28px; }
+    .sec-head h2 { font-size: 32px; }
+    .about .intro { padding: 32px 26px; }
+    .about .intro h3 { font-size: 32px; }
+    .stat { padding: 22px 20px; }
+    .stat b { font-size: 30px; }
     .steps { grid-template-columns: 1fr; }
-    .faq summary { font-size: 19px; }
-    .grid { columns: 2 150px; column-gap: 8px; }
-    .grid figure { margin-bottom: 8px; }
+    .steps li { display: grid; grid-template-columns: 34px 1fr; column-gap: 16px; padding: 22px 20px; }
+    .steps li::before { grid-row: span 2; margin: 0; }
+    .form { padding: 28px 20px; }
+    .row { grid-template-columns: 1fr; gap: 0; }
+    .faq summary { font-size: 18px; }
+    .faq details p { padding-right: 0; }
+    .fcols { grid-template-columns: 1fr 1fr; }
+    .langs button { padding: 3px 4px; }
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#main" data-i="skip"></a>
 
-<header id="top">
-  <nav class="wrap nav">
-    <a href="#" class="brand"><img src="img/logo_mark.png" alt="Mustafi Studio"></a>
+<nav class="gnav">
+  <div class="wrap">
+    <a href="#" class="brand" aria-label="Mustafi Studio"><img src="img/logo_mark.png" alt="Mustafi Studio" width="900" height="409"></a>
     <ul id="menu">
       <li><a href="#services" data-i="nav_services"></a></li>
       <li><a href="#portfolio" data-i="nav_portfolio"></a></li>
       <li><a href="#about" data-i="nav_about"></a></li>
+      <li><a href="#process" data-i="nav_process"></a></li>
+      <li><a href="#faq" data-i="nav_faq"></a></li>
       <li><a href="#contact" data-i="nav_contact"></a></li>
     </ul>
-    <div class="langs" id="langs">
-      <button data-l="de">DE</button><button data-l="sq">SQ</button><button data-l="bs">BS</button><button data-l="en">EN</button>
+    <div class="right">
+      <div class="langs" id="langs"><button data-l="de">DE</button><button data-l="sq">SQ</button><button data-l="bs">BS</button><button data-l="en">EN</button></div>
+      <a class="cta" href="#contact" data-i="nav_cta"></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span></button>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
-  </nav>
-</header>
+  </div>
+</nav>
 
-<main>
-  <section class="hero" style="padding:0">
-    <video autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-hidden="true"><source src="img/hero.mp4" type="video/mp4"></video>
-    <div class="hero-text">
-      <img class="hero-logo" src="img/logo_full.png" width="900" height="479" alt="Mustafi Studio – Your Photo and Videographer">
-      <h1 data-i="hero_title"></h1>
-      <p data-i="hero_text"></p>
-      <div class="btns">
-        <a class="btn btn-red" href="#contact" data-i="hero_cta"></a>
-        <a class="btn btn-line" href="#portfolio" data-i="hero_cta2"></a>
+<main id="main">
+  <div class="tiles">
+    <section class="tile dark hero">
+      <video autoplay muted loop playsinline preload="auto" poster="img/hero-poster.jpg" aria-hidden="true"><source src="img/hero.mp4" type="video/mp4"></video>
+      <div class="txt reveal">
+        <img class="mark" src="img/logo_mark.png" alt="" width="900" height="409">
+        <h1>Mustafi Studio</h1>
+        <p class="tagline">Your Photo and Videographer</p>
+        <h3 data-i="hero_title"></h3>
+        <p class="sub" data-i="hero_text"></p>
+        <div class="links">
+          <a class="pill" href="#contact" data-i="hero_cta"></a>
+          <a class="pill ghost" href="#portfolio" data-i="hero_cta2"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="check">
+      <h2 data-i="chk_title"></h2>
+      <p data-i="chk_sub"></p>
+      <form id="dateCheck">
+        <input id="chkDate" type="date" required aria-label="Datum">
+        <button class="pill" type="submit" data-i="chk_btn"></button>
+      </form>
+    </section>
+
+    <section class="tile" id="services" style="background-image:url(img/pf/w4.jpg)">
+      <div class="txt reveal">
+        <h2 data-i="s1_t"></h2>
+        <p class="sub" data-i="s1_p"></p>
+        <div class="links"><a class="pill" href="#contact" data-i="lk_ask"></a><a class="pill ghost" href="#portfolio" data-i="lk_see"></a></div>
+      </div>
+    </section>
+
+    <div class="tile-grid">
+      <section class="tile dark" style="background-image:url(img/pf/e4.jpg)">
+        <div class="txt reveal"><h2 data-i="s2_t"></h2><p class="sub" data-i="s2_p"></p>
+          <div class="links"><a class="pill" href="#contact" data-i="lk_ask"></a><a class="pill ghost" href="#portfolio" data-i="lk_see"></a></div></div>
+      </section>
+      <section class="tile dark" style="background-image:url(img/pf/w8.jpg)">
+        <div class="txt reveal"><h2 data-i="s3_t"></h2><p class="sub" data-i="s3_p"></p>
+          <div class="links"><a class="pill" href="#contact" data-i="lk_ask"></a><a class="pill ghost" href="#portfolio" data-i="lk_see"></a></div></div>
+      </section>
+      <section class="tile" style="background-image:url(img/pf/p1.jpg)">
+        <div class="txt reveal"><h2 data-i="s4_t"></h2><p class="sub" data-i="s4_p"></p>
+          <div class="links"><a class="pill" href="#contact" data-i="lk_ask"></a><a class="pill ghost" href="#portfolio" data-i="lk_see"></a></div></div>
+      </section>
+      <section class="tile dark" style="background-image:url(img/me-edit.jpg)">
+        <div class="txt reveal"><h2 data-i="s5_t"></h2><p class="sub" data-i="s5_p"></p>
+          <div class="links"><a class="pill" href="#contact" data-i="lk_ask"></a><a class="pill ghost" href="#about" data-i="lk_more"></a></div></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="block" id="portfolio">
+    <div class="wrap sec-head reveal">
+      <h2 data-i="pf_title"></h2>
+      <a class="more" href="https://www.instagram.com/mustafi.studio/" target="_blank" rel="noopener" data-i="pf_view"></a>
+    </div>
+    <div class="carousel" id="grid"></div>
+    <div class="wrap car-ctrl"><button id="prev" aria-label="Zurück">‹</button><button id="next" aria-label="Weiter">›</button></div>
+  </section>
+
+  <section class="block gray" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 data-i="ab_head"></h2></div>
+      <div class="about">
+        <div class="panel intro reveal">
+          <small data-i="ab_eyebrow"></small>
+          <h3 data-i="ab_title"></h3>
+          <p data-i="ab_p1"></p>
+          <p data-i="ab_p2"></p>
+        </div>
+        <div class="panel pic reveal"><img src="img/me-camera.jpg" alt="Adis Mustafi mit Kamera auf einer Hochzeit" loading="lazy"></div>
+        <div class="stats">
+          <div class="stat reveal"><b>1</b><h4 data-i="why1_t"></h4><span data-i="why1_p"></span></div>
+          <div class="stat reveal"><b>4</b><h4 data-i="why2_t"></h4><span data-i="why2_p"></span></div>
+          <div class="stat reveal"><b>2</b><h4 data-i="why3_t"></h4><span data-i="why3_p"></span></div>
+          <div class="stat reveal"><b>360°</b><h4 data-i="why4_t"></h4><span data-i="why4_p"></span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <section class="block" id="process">
     <div class="wrap">
-      <p class="eyebrow" data-i="sv_eyebrow"></p>
-      <h2 data-i="sv_title"></h2>
-      <p class="lead" data-i="sv_lead"></p>
-      <div class="services">
-        <article class="service reveal"><div class="ph" style="background-image:url(img/pf/w4.jpg)"></div><div class="txt"><h3 data-i="s1_t"></h3><p data-i="s1_p"></p></div></article>
-        <article class="service reveal"><div class="ph" style="background-image:url(img/pf/e5.jpg)"></div><div class="txt"><h3 data-i="s2_t"></h3><p data-i="s2_p"></p></div></article>
-        <article class="service reveal"><div class="ph" style="background-image:url(img/pf/w8.jpg)"></div><div class="txt"><h3 data-i="s3_t"></h3><p data-i="s3_p"></p></div></article>
-        <article class="service reveal"><div class="ph" style="background-image:url(img/pf/p1.jpg)"></div><div class="txt"><h3 data-i="s4_t"></h3><p data-i="s4_p"></p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="process">
-    <div class="wrap">
-      <p class="eyebrow" data-i="pr_eyebrow"></p>
-      <h2 data-i="pr_title"></h2>
+      <div class="sec-head reveal"><h2 data-i="pr_title"></h2></div>
       <ol class="steps">
         <li class="reveal"><h3 data-i="st1_t"></h3><p data-i="st1_p"></p></li>
         <li class="reveal"><h3 data-i="st2_t"></h3><p data-i="st2_p"></p></li>
@@ -214,43 +396,9 @@
     </div>
   </section>
 
-  <section id="portfolio">
+  <section class="block" id="faq" style="padding-top:0">
     <div class="wrap">
-      <p class="eyebrow" data-i="pf_eyebrow"></p>
-      <h2 data-i="pf_title"></h2>
-      <div class="filters" id="filters" hidden>
-        <button class="active" data-f="all" data-i="f_all"></button>
-        <button data-f="wedding" data-i="f_wedding"></button>
-        <button data-f="event" data-i="f_event"></button>
-        <button data-f="details" data-i="f_details"></button>
-        <button data-f="places" data-i="f_places"></button>
-      </div>
-      <div class="grid" id="grid"></div>
-      <p class="lead" id="pfEmpty" style="margin-top:28px"><span data-i="pf_soon"></span><br><br><a class="btn btn-line" href="https://www.instagram.com/mustafi.studio/" target="_blank" rel="noopener">Instagram @mustafi.studio</a></p>
-    </div>
-  </section>
-
-  <section id="about" style="padding-top:0">
-    <div class="wrap about">
-      <div class="about-pics reveal">
-        <img src="img/me-edit.jpg" alt="Adis Mustafi bei der Videobearbeitung" loading="lazy">
-        <img src="img/me-camera.jpg" alt="Adis Mustafi mit Kamera auf einer Hochzeit" loading="lazy" style="object-position: center 20%">
-        <img src="img/me-crowd.jpg" alt="Adis Mustafi filmt die Gäste beim Tanz" loading="lazy">
-      </div>
-      <div class="reveal">
-        <p class="eyebrow" data-i="ab_eyebrow"></p>
-        <h2 data-i="ab_title"></h2>
-        <p class="lead" data-i="ab_p1"></p>
-        <p class="lead" data-i="ab_p2"></p>
-        <div class="gear"><span>Lumix S1 II</span><span>4K / 6K Video</span><span>DJI Drone</span><span>Insta360</span><span>Final Cut Pro</span><span>DaVinci Resolve</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="faq" style="padding-top:0">
-    <div class="wrap">
-      <p class="eyebrow" data-i="fq_eyebrow"></p>
-      <h2 data-i="fq_title"></h2>
+      <div class="sec-head reveal"><h2 data-i="fq_title"></h2></div>
       <div class="faq">
         <details><summary data-i="q1"></summary><p data-i="a1"></p></details>
         <details><summary data-i="q2"></summary><p data-i="a2"></p></details>
@@ -261,183 +409,316 @@
     </div>
   </section>
 
-  <section id="contact">
-    <div class="wrap contact">
-      <div>
-        <p class="eyebrow" data-i="ct_eyebrow"></p>
-        <h2 data-i="ct_title"></h2>
-        <p class="lead" data-i="ct_lead"></p>
-      </div>
-      <div class="cards">
-        <a class="card" href="https://wa.me/41798288648" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
-          <span><small data-i="ct_ch"></small><strong>+41 79 828 86 48</strong></span>
-        </a>
-        <a class="card" href="https://wa.me/38343822020" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
-          <span><small data-i="ct_xk"></small><strong>+383 43 822 020</strong></span>
-        </a>
-        <a class="card" href="https://www.instagram.com/mustafi.studio/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM21.9 7.1c-.1-1.6-.4-3-1.6-4.1C19.1 1.8 17.7 1.5 16.1 1.4 14.5 1.3 9.5 1.3 7.9 1.4 6.3 1.5 4.9 1.8 3.7 3 2.5 4.1 2.2 5.5 2.1 7.1c-.1 1.6-.1 6.6 0 8.2.1 1.6.4 3 1.6 4.1 1.2 1.2 2.6 1.5 4.2 1.6 1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6 1.2-1.2 1.5-2.6 1.6-4.1.1-1.6.1-6.6 0-8.2Zm-2.1 10a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9a3.3 3.3 0 0 1 1.9-1.9c1.3-.5 4.4-.4 5.9-.4s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9Z"/></svg>
-          <span><small>Instagram</small><strong>@mustafi.studio</strong></span>
-        </a>
-        <a class="card" href="https://www.youtube.com/@MustafiStudio" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
-          <span><small>YouTube</small><strong>@MustafiStudio</strong></span>
-        </a>
+  <section class="block gray" id="contact">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 data-i="ct_title"></h2></div>
+      <div class="contact">
+        <div class="side">
+          <a class="channel" href="https://wa.me/41798288648" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+            <span><small data-i="ct_ch"></small><strong>+41 79 828 86 48</strong></span><span class="arr">›</span>
+          </a>
+          <a class="channel" href="https://wa.me/38343822020" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z"/></svg>
+            <span><small data-i="ct_xk"></small><strong>+383 43 822 020</strong></span><span class="arr">›</span>
+          </a>
+          <a class="channel" href="https://www.instagram.com/mustafi.studio/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/><path d="M16 2H8a6 6 0 0 0-6 6v8a6 6 0 0 0 6 6h8a6 6 0 0 0 6-6V8a6 6 0 0 0-6-6Zm4 14a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8Z"/></svg>
+            <span><small>Instagram</small><strong>@mustafi.studio</strong></span><span class="arr">›</span>
+          </a>
+          <a class="channel" href="https://www.youtube.com/@MustafiStudio" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg>
+            <span><small>YouTube</small><strong>@MustafiStudio</strong></span><span class="arr">›</span>
+          </a>
+        </div>
+
+        <form class="form reveal" id="inquiry">
+          <h3 data-i="fm_title"></h3>
+          <p data-i="fm_sub"></p>
+          <div class="chips" id="chips">
+            <label><input type="checkbox" value="s1_t"><span data-i="s1_t"></span></label>
+            <label><input type="checkbox" value="s2_t"><span data-i="s2_t"></span></label>
+            <label><input type="checkbox" value="s3_t"><span data-i="s3_t"></span></label>
+            <label><input type="checkbox" value="s4_t"><span data-i="s4_t"></span></label>
+          </div>
+          <div class="row">
+            <div class="field"><label for="fName" data-i="fm_name"></label><input id="fName" autocomplete="name"></div>
+            <div class="field"><label for="fDate" data-i="fm_date"></label><input id="fDate" type="date"></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="fPlace" data-i="fm_place"></label><input id="fPlace"></div>
+            <div class="field"><label for="fTo" data-i="fm_to"></label>
+              <select id="fTo"><option value="41798288648" data-i="ct_ch"></option><option value="38343822020" data-i="ct_xk"></option></select>
+            </div>
+          </div>
+          <div class="field"><label for="fMsg" data-i="fm_msg"></label><textarea id="fMsg"></textarea></div>
+          <button class="pill" type="submit" data-i="fm_send"></button>
+          <p class="note" data-i="fm_note"></p>
+        </form>
       </div>
     </div>
   </section>
 </main>
 
+<div class="mbar" id="mbar">
+  <a class="pill ghost" href="https://wa.me/41798288648" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="pill" href="#contact" data-i="nav_cta"></a>
+</div>
+
 <footer>
   <div class="wrap">
-    <span>© <span id="year"></span> Mustafi Studio · Your Photo and Videographer</span>
-    <span data-i="ft_where"></span>
+    <p class="note" data-i="ft_note"></p>
+    <div class="fcols">
+      <div><h4 data-i="nav_services"></h4><a href="#services" data-i="s1_t"></a><a href="#services" data-i="s2_t"></a><a href="#services" data-i="s3_t"></a><a href="#services" data-i="s4_t"></a></div>
+      <div><h4>Mustafi Studio</h4><a href="#portfolio" data-i="nav_portfolio"></a><a href="#about" data-i="nav_about"></a><a href="#process" data-i="nav_process"></a><a href="#faq" data-i="nav_faq"></a></div>
+      <div><h4 data-i="nav_contact"></h4><a href="https://wa.me/41798288648" target="_blank" rel="noopener">WhatsApp CH</a><a href="https://wa.me/38343822020" target="_blank" rel="noopener">WhatsApp XK</a></div>
+      <div><h4>Social</h4><a href="https://www.instagram.com/mustafi.studio/" target="_blank" rel="noopener">Instagram</a><a href="https://www.youtube.com/@MustafiStudio" target="_blank" rel="noopener">YouTube</a></div>
+    </div>
+    <div class="flegal">
+      <span>Copyright © <span id="year"></span> Mustafi Studio. <span data-i="ft_rights"></span></span>
+      <span data-i="ft_where"></span>
+    </div>
   </div>
 </footer>
 
 <script>
+document.documentElement.classList.add("js");
+
 // Isječci bez lica – cijele slike su na Instagramu
 const PHOTOS = [
-  ["w1","wedding"],["e1","event"],["d1","details"],["w3","wedding"],["p1","places"],["e5","event"],
-  ["d2","details"],["w4","wedding"],["e2","event"],["p2","places"],["w5","wedding"],["d3","details"],
-  ["e6","event"],["w8","wedding"],["d4","details"],["e7","event"],["w6","wedding"],["e4","event"],
-  ["w9","wedding"],["d5","details"]
+  ["w9","f_wedding"],["d1","f_details","wide"],["e1","f_event"],["w3","f_wedding"],["p1","f_places","wide"],
+  ["e4","f_event"],["w5","f_wedding"],["d5","f_details"],["e2","f_event"],["d3","f_details","wide"],
+  ["w6","f_wedding"],["e6","f_event"],["p2","f_places","wide"],["w8","f_wedding"],["e7","f_event"],
+  ["d2","f_details"],["w1","f_wedding"],["d4","f_details","wide"],["e5","f_event"],["w4","f_wedding"]
 ];
 const INSTAGRAM = "https://www.instagram.com/mustafi.studio/";
 
 const T = {
   de: {
-    nav_services:"Leistungen", nav_portfolio:"Portfolio", nav_about:"Über mich", nav_contact:"Kontakt",
-    hero_title:"Momente, die <em>bleiben</em>.",
+    nav_services:"Leistungen", nav_portfolio:"Portfolio", nav_about:"Über mich", nav_process:"Ablauf", nav_faq:"FAQ", nav_contact:"Kontakt", nav_cta:"Anfrage",
+    hero_title:"Momente, die bleiben.",
     hero_text:"Foto und Video für Hochzeiten, Events, Porträts und Orte – in der Schweiz und im Kosovo.",
-    hero_cta:"Anfrage senden", hero_cta2:"Portfolio ansehen",
-    sv_eyebrow:"Leistungen", sv_title:"Was ich für Sie festhalte",
-    sv_lead:"Vom ersten Gespräch bis zum fertigen Film: professionelle Aufnahmen mit moderner Technik und ein sorgfältiger Schnitt mit Farbkorrektur.",
-    s1_t:"Hochzeiten", s1_p:"Fotos und Hochzeitsfilm vom Getting Ready bis zur letzten Tanzrunde – natürlich, emotional, ohne Stress.",
-    s2_t:"Events & Live-Musik", s2_p:"Verlobungen, Geburtstage, Firmenanlässe und Auftritte von Bands – lückenlos dokumentiert mit Foto und Video.",
-    s3_t:"Porträts & Familie", s3_p:"Paar-, Familien- und Porträtshootings draussen oder im Studio, mit liebevoll bearbeiteten Bildern.",
-    s4_t:"Orte, Immobilien & Drohne", s4_p:"Luftaufnahmen, 360°-Video und Fotos für Immobilien, Restaurants, Hotels und Tourismus.",
-    pf_eyebrow:"Portfolio", pf_title:"Ausgewählte Arbeiten",
-    pf_soon:"Alle Fotos und Reels in voller Qualität finden Sie auf Instagram.", pf_view:"Auf Instagram ansehen", f_all:"Alle", f_wedding:"Hochzeiten", f_event:"Events", f_details:"Details", f_places:"Orte",
+    hero_cta:"Anfrage senden", hero_cta2:"Arbeiten ansehen",
+    lk_ask:"Anfragen", lk_see:"Beispiele ansehen", lk_more:"Mehr erfahren",
+    s1_t:"Hochzeiten", s1_p:"Vom Getting Ready bis zur letzten Tanzrunde. Natürlich, emotional, ohne Stress.",
+    s2_t:"Events & Live-Musik", s2_p:"Verlobungen, Geburtstage, Firmenanlässe und Bands – lückenlos in Foto und Video.",
+    s3_t:"Porträts & Familie", s3_p:"Paar-, Familien- und Porträtshootings. Draussen oder im Studio.",
+    s4_t:"Orte & Drohne", s4_p:"Luftaufnahmen und 360°-Video für Immobilien, Hotels und Tourismus.",
+    s5_t:"Schnitt & Farbe", s5_p:"Farbkorrektur, Schnitt und Ton. Alles aus einer Hand.",
+    pf_title:"Ausgewählte Arbeiten. <span>Echte Momente.</span>", pf_view:"Alle auf Instagram",
+    f_wedding:"Hochzeit", f_event:"Event", f_details:"Details", f_places:"Orte",
+    ab_head:"Hinter der Kamera. <span>Adis Mustafi.</span>",
     ab_eyebrow:"Über mich", ab_title:"Hallo, ich bin Adis.",
     ab_p1:"Hinter Mustafi Studio stehe ich – Fotograf und Videograf mit Leidenschaft für echte Emotionen. Ich arbeite unauffällig, damit Sie Ihren Tag geniessen können.",
-    ab_p2:"Schnitt, Farbkorrektur und Ton mache ich selbst – so bekommen Sie alles aus einer Hand. Ich spreche Deutsch, Albanisch, Bosnisch und Englisch.",
-    ct_eyebrow:"Kontakt", ct_title:"Erzählen Sie mir von Ihrem Projekt",
-    ct_lead:"Schreiben Sie mir einfach auf WhatsApp oder Instagram – ich melde mich so schnell wie möglich mit einem unverbindlichen Angebot.",
+    ab_p2:"Schnitt, Farbkorrektur und Ton mache ich selbst – so bekommen Sie alles aus einer Hand.",
+    why1_t:"Ansprechpartner", why1_p:"Foto und Video von einer Person – keine Abstimmung zwischen mehreren Teams.", why2_t:"Sprachen", why2_p:"Deutsch, Albanisch, Bosnisch und Englisch.", why3_t:"Länder", why3_p:"Schweiz und Kosovo – auf Anfrage weltweit.", why4_t:"Drohne & 360°", why4_p:"Luftaufnahmen und 360°-Video für besondere Perspektiven.",
+    chk_title:"Ist Ihr Wunschdatum noch frei?", chk_sub:"Datum wählen – ich antworte Ihnen auf WhatsApp.", chk_btn:"Verfügbarkeit prüfen", chk_msg:"Hallo Adis, ist dieses Datum bei Ihnen noch frei:", skip:"Zum Inhalt springen",
+    pr_title:"So arbeiten wir zusammen. <span>In fünf Schritten.</span>",
+    st1_t:"Anfrage", st1_p:"Sie schreiben mir auf WhatsApp oder Instagram – Datum, Ort und Ihre Wünsche.",
+    st2_t:"Gespräch & Angebot", st2_p:"Wir besprechen alles persönlich und Sie erhalten ein klares, unverbindliches Angebot.",
+    st3_t:"Aufnahmetag", st3_p:"Ich bin pünktlich vor Ort und halte alles fest – unauffällig.",
+    st4_t:"Bearbeitung", st4_p:"Auswahl, Farbkorrektur, Schnitt und Ton – alles aus einer Hand.",
+    st5_t:"Lieferung", st5_p:"Sie erhalten Ihre Fotos und Ihren Film digital in voller Qualität.",
+    fq_title:"Häufige Fragen.",
+    q1:"Was kostet ein Shooting oder ein Hochzeitsfilm?", a1:"Jedes Angebot ist individuell – je nach Dauer, Ort und ob Sie Foto, Video oder beides möchten. Schreiben Sie mir, und Sie erhalten ein unverbindliches Angebot.",
+    q2:"Reisen Sie auch?", a2:"Ja. Ich arbeite in der ganzen Schweiz und im Kosovo, auf Anfrage auch in anderen Ländern.",
+    q3:"Wann bekomme ich die Fotos und den Film?", a3:"Das hängt vom Umfang ab. Den genauen Liefertermin besprechen wir schon vorab, damit Sie wissen, woran Sie sind.",
+    q4:"Machen Sie auch Drohnen- und 360°-Aufnahmen?", a4:"Ja – Luftaufnahmen und 360°-Video, überall dort, wo das Fliegen erlaubt ist.",
+    q5:"In welchen Sprachen kann ich mit Ihnen sprechen?", a5:"Deutsch, Albanisch, Bosnisch und Englisch.",
+    ct_title:"Kontakt. <span>Ich freue mich auf Sie.</span>",
     ct_ch:"WhatsApp Schweiz", ct_xk:"WhatsApp Kosovo",
-    pr_eyebrow:"Ablauf", pr_title:"So arbeiten wir zusammen", st1_t:"Anfrage", st1_p:"Sie schreiben mir auf WhatsApp oder Instagram – Datum, Ort und Ihre Wünsche.", st2_t:"Gespräch & Angebot", st2_p:"Wir besprechen alles persönlich und Sie erhalten ein klares, unverbindliches Angebot.", st3_t:"Aufnahmetag", st3_p:"Ich bin pünktlich vor Ort und halte alles fest – unauffällig, damit Sie den Tag geniessen.", st4_t:"Bearbeitung", st4_p:"Auswahl, Farbkorrektur, Schnitt und Ton – alles aus einer Hand.", st5_t:"Lieferung", st5_p:"Sie erhalten Ihre Fotos und Ihren Film digital in voller Qualität.", fq_eyebrow:"FAQ", fq_title:"Häufige Fragen", q1:"Was kostet ein Shooting oder ein Hochzeitsfilm?", a1:"Jedes Angebot ist individuell – je nach Dauer, Ort und ob Sie Foto, Video oder beides möchten. Schreiben Sie mir, und Sie erhalten ein unverbindliches Angebot.", q2:"Reisen Sie auch?", a2:"Ja. Ich arbeite in der ganzen Schweiz und im Kosovo, auf Anfrage auch in anderen Ländern.", q3:"Wann bekomme ich die Fotos und den Film?", a3:"Das hängt vom Umfang ab. Den genauen Liefertermin besprechen wir schon vorab, damit Sie wissen, woran Sie sind.", q4:"Machen Sie auch Drohnen- und 360°-Aufnahmen?", a4:"Ja – Luftaufnahmen und 360°-Video, überall dort, wo das Fliegen erlaubt ist.", q5:"In welchen Sprachen kann ich mit Ihnen sprechen?", a5:"Deutsch, Albanisch, Bosnisch und Englisch.",
-    ft_where:"Schweiz · Kosovo · auf Anfrage weltweit"
+    fm_title:"Schnellanfrage.", fm_sub:"Ausfüllen und senden – Ihre Nachricht öffnet sich fertig in WhatsApp.",
+    fm_name:"Name", fm_date:"Datum", fm_place:"Ort", fm_to:"Senden an", fm_msg:"Nachricht (optional)", fm_send:"Per WhatsApp senden",
+    fm_note:"Unverbindlich und kostenlos.",
+    wa_hi:"Hallo Adis, ich interessiere mich für", wa_date:"Datum", wa_place:"Ort", wa_name:"Name", wa_any:"ein Shooting",
+    ft_note:"Alle Fotos auf dieser Seite sind Ausschnitte. Die vollständigen Bilder und Reels finden Sie auf Instagram @mustafi.studio.",
+    ft_rights:"Alle Rechte vorbehalten.", ft_where:"Schweiz · Kosovo · auf Anfrage weltweit"
   },
   sq: {
-    nav_services:"Shërbimet", nav_portfolio:"Portofoli", nav_about:"Rreth meje", nav_contact:"Kontakti",
-    hero_title:"Momente që <em>mbeten</em>.",
+    nav_services:"Shërbimet", nav_portfolio:"Portofoli", nav_about:"Rreth meje", nav_process:"Procesi", nav_faq:"Pyetje", nav_contact:"Kontakti", nav_cta:"Kërkesë",
+    hero_title:"Momente që mbeten.",
     hero_text:"Foto dhe video për dasma, evente, portrete dhe vende – në Zvicër dhe në Kosovë.",
-    hero_cta:"Dërgo kërkesë", hero_cta2:"Shiko portofolin",
-    sv_eyebrow:"Shërbimet", sv_title:"Çfarë regjistroj për ju",
-    sv_lead:"Nga biseda e parë deri te filmi i përfunduar: xhirime profesionale me teknikë moderne dhe montazh i kujdesshëm me korrigjim ngjyrash.",
-    s1_t:"Dasma", s1_p:"Foto dhe film dasme nga përgatitjet deri te vallja e fundit – natyrshëm, me emocion, pa stres.",
-    s2_t:"Evente & muzikë live", s2_p:"Fejesa, ditëlindje, evente biznesi dhe koncerte me bende – të dokumentuara plotësisht me foto dhe video.",
-    s3_t:"Portrete & familje", s3_p:"Fotosesione për çifte, familje dhe portrete jashtë ose në studio, me foto të përpunuara me kujdes.",
-    s4_t:"Vende, patundshmëri & dron", s4_p:"Xhirime ajrore, video 360° dhe foto për patundshmëri, restorante, hotele dhe turizëm.",
-    pf_eyebrow:"Portofoli", pf_title:"Punë të zgjedhura",
-    pf_soon:"Të gjitha fotot dhe reels në cilësi të plotë i gjeni në Instagram.", pf_view:"Shiko në Instagram", f_all:"Të gjitha", f_wedding:"Dasma", f_event:"Evente", f_details:"Detaje", f_places:"Vende",
+    hero_cta:"Dërgo kërkesë", hero_cta2:"Shiko punët",
+    lk_ask:"Kërko ofertë", lk_see:"Shiko shembuj", lk_more:"Mëso më shumë",
+    s1_t:"Dasma", s1_p:"Nga përgatitjet deri te vallja e fundit. Natyrshëm, me emocion, pa stres.",
+    s2_t:"Evente & muzikë live", s2_p:"Fejesa, ditëlindje, evente biznesi dhe bende – plotësisht me foto dhe video.",
+    s3_t:"Portrete & familje", s3_p:"Fotosesione për çifte, familje dhe portrete. Jashtë ose në studio.",
+    s4_t:"Vende & dron", s4_p:"Xhirime ajrore dhe video 360° për patundshmëri, hotele dhe turizëm.",
+    s5_t:"Montazh & ngjyra", s5_p:"Korrigjim ngjyrash, montazh dhe zë. Të gjitha nga një dorë.",
+    pf_title:"Punë të zgjedhura. <span>Momente të vërteta.</span>", pf_view:"Të gjitha në Instagram",
+    f_wedding:"Dasmë", f_event:"Event", f_details:"Detaje", f_places:"Vende",
+    ab_head:"Pas kamerës. <span>Adis Mustafi.</span>",
     ab_eyebrow:"Rreth meje", ab_title:"Përshëndetje, unë jam Adisi.",
     ab_p1:"Pas Mustafi Studio qëndroj unë – fotograf dhe videograf me pasion për emocionet e vërteta. Punoj pa u vënë re, që ju të shijoni ditën tuaj.",
-    ab_p2:"Montazhin, ngjyrat dhe zërin i bëj vetë – kështu merrni gjithçka nga një dorë. Flas gjermanisht, shqip, boshnjakisht dhe anglisht.",
-    ct_eyebrow:"Kontakti", ct_title:"Më tregoni për projektin tuaj",
-    ct_lead:"Më shkruani në WhatsApp ose Instagram – do t'ju përgjigjem sa më shpejt me një ofertë pa detyrim.",
+    ab_p2:"Montazhin, ngjyrat dhe zërin i bëj vetë – kështu merrni gjithçka nga një dorë.",
+    why1_t:"Një person kontakti", why1_p:"Foto dhe video nga një person – pa koordinim mes disa ekipeve.", why2_t:"Gjuhë", why2_p:"Gjermanisht, shqip, boshnjakisht dhe anglisht.", why3_t:"Shtete", why3_p:"Zvicër dhe Kosovë – me kërkesë në gjithë botën.", why4_t:"Dron & 360°", why4_p:"Xhirime ajrore dhe video 360° për perspektiva të veçanta.",
+    chk_title:"A është data juaj ende e lirë?", chk_sub:"Zgjidhni datën – ju përgjigjem në WhatsApp.", chk_btn:"Kontrollo disponueshmërinë", chk_msg:"Përshëndetje Adis, a jeni i lirë në këtë datë:", skip:"Kalo te përmbajtja",
+    pr_title:"Si punojmë bashkë. <span>Në pesë hapa.</span>",
+    st1_t:"Kërkesa", st1_p:"Më shkruani në WhatsApp ose Instagram – data, vendi dhe dëshirat tuaja.",
+    st2_t:"Bisedë & ofertë", st2_p:"I diskutojmë të gjitha personalisht dhe ju merrni një ofertë të qartë pa detyrim.",
+    st3_t:"Dita e xhirimit", st3_p:"Jam në kohë në vend dhe regjistroj gjithçka – pa u vënë re.",
+    st4_t:"Përpunimi", st4_p:"Përzgjedhja, ngjyrat, montazhi dhe zëri – të gjitha nga një dorë.",
+    st5_t:"Dorëzimi", st5_p:"Fotot dhe filmin tuaj i merrni në format digjital me cilësi të plotë.",
+    fq_title:"Pyetje të shpeshta.",
+    q1:"Sa kushton një fotosesion ose film dasme?", a1:"Çdo ofertë është individuale – sipas kohëzgjatjes, vendit dhe nëse dëshironi foto, video apo të dyja. Më shkruani dhe do të merrni një ofertë pa detyrim.",
+    q2:"A udhëtoni edhe jashtë?", a2:"Po. Punoj në gjithë Zvicrën dhe në Kosovë, me kërkesë edhe në vende të tjera.",
+    q3:"Kur i marr fotot dhe filmin?", a3:"Varet nga vëllimi i punës. Datën e saktë të dorëzimit e caktojmë që në fillim, që ta dini qartë.",
+    q4:"A bëni edhe xhirime me dron dhe 360°?", a4:"Po – xhirime ajrore dhe video 360°, kudo ku fluturimi lejohet.",
+    q5:"Në cilat gjuhë mund të flasim?", a5:"Gjermanisht, shqip, boshnjakisht dhe anglisht.",
+    ct_title:"Kontakti. <span>Mezi pres t'ju dëgjoj.</span>",
     ct_ch:"WhatsApp Zvicër", ct_xk:"WhatsApp Kosovë",
-    pr_eyebrow:"Procesi", pr_title:"Si punojmë bashkë", st1_t:"Kërkesa", st1_p:"Më shkruani në WhatsApp ose Instagram – data, vendi dhe dëshirat tuaja.", st2_t:"Bisedë & ofertë", st2_p:"I diskutojmë të gjitha personalisht dhe ju merrni një ofertë të qartë pa detyrim.", st3_t:"Dita e xhirimit", st3_p:"Jam në kohë në vend dhe regjistroj gjithçka – pa u vënë re, që ju të shijoni ditën.", st4_t:"Përpunimi", st4_p:"Përzgjedhja, ngjyrat, montazhi dhe zëri – të gjitha nga një dorë.", st5_t:"Dorëzimi", st5_p:"Fotot dhe filmin tuaj i merrni në format digjital me cilësi të plotë.", fq_eyebrow:"FAQ", fq_title:"Pyetje të shpeshta", q1:"Sa kushton një fotosesion ose film dasme?", a1:"Çdo ofertë është individuale – sipas kohëzgjatjes, vendit dhe nëse dëshironi foto, video apo të dyja. Më shkruani dhe do të merrni një ofertë pa detyrim.", q2:"A udhëtoni edhe jashtë?", a2:"Po. Punoj në gjithë Zvicrën dhe në Kosovë, me kërkesë edhe në vende të tjera.", q3:"Kur i marr fotot dhe filmin?", a3:"Varet nga vëllimi i punës. Datën e saktë të dorëzimit e caktojmë që në fillim, që ta dini qartë.", q4:"A bëni edhe xhirime me dron dhe 360°?", a4:"Po – xhirime ajrore dhe video 360°, kudo ku fluturimi lejohet.", q5:"Në cilat gjuhë mund të flasim?", a5:"Gjermanisht, shqip, boshnjakisht dhe anglisht.",
-    ft_where:"Zvicër · Kosovë · me kërkesë në gjithë botën"
+    fm_title:"Kërkesë e shpejtë.", fm_sub:"Plotësoni dhe dërgoni – mesazhi hapet i gatshëm në WhatsApp.",
+    fm_name:"Emri", fm_date:"Data", fm_place:"Vendi", fm_to:"Dërgo te", fm_msg:"Mesazhi (opsional)", fm_send:"Dërgo me WhatsApp",
+    fm_note:"Pa detyrim dhe falas.",
+    wa_hi:"Përshëndetje Adis, më intereson", wa_date:"Data", wa_place:"Vendi", wa_name:"Emri", wa_any:"një xhirim",
+    ft_note:"Të gjitha fotot në këtë faqe janë prerje. Fotot e plota dhe reels i gjeni në Instagram @mustafi.studio.",
+    ft_rights:"Të gjitha të drejtat e rezervuara.", ft_where:"Zvicër · Kosovë · me kërkesë në gjithë botën"
   },
   bs: {
-    nav_services:"Usluge", nav_portfolio:"Portfolio", nav_about:"O meni", nav_contact:"Kontakt",
-    hero_title:"Trenuci koji <em>ostaju</em>.",
+    nav_services:"Usluge", nav_portfolio:"Portfolio", nav_about:"O meni", nav_process:"Kako radim", nav_faq:"Pitanja", nav_contact:"Kontakt", nav_cta:"Upit",
+    hero_title:"Trenuci koji ostaju.",
     hero_text:"Foto i video za vjenčanja, događaje, portrete i mjesta – u Švicarskoj i na Kosovu.",
-    hero_cta:"Pošalji upit", hero_cta2:"Pogledaj portfolio",
-    sv_eyebrow:"Usluge", sv_title:"Šta za vas snimam",
-    sv_lead:"Od prvog razgovora do gotovog filma: profesionalno snimanje modernom opremom i pažljiva montaža sa korekcijom boja.",
-    s1_t:"Vjenčanja", s1_p:"Fotografije i film vjenčanja od pripreme do posljednjeg plesa – prirodno, emotivno, bez stresa.",
-    s2_t:"Događaji i muzika uživo", s2_p:"Vjeridbe, rođendani, firmeni događaji i nastupi bendova – kompletno dokumentovani fotom i videom.",
-    s3_t:"Portreti i porodica", s3_p:"Snimanja za parove, porodice i portrete napolju ili u studiju, sa pažljivo obrađenim fotografijama.",
-    s4_t:"Mjesta, nekretnine i dron", s4_p:"Snimci iz zraka, 360° video i fotografije za nekretnine, restorane, hotele i turizam.",
-    pf_eyebrow:"Portfolio", pf_title:"Izabrani radovi",
-    pf_soon:"Sve fotografije i reelse u punoj kvaliteti pogledajte na Instagramu.", pf_view:"Pogledaj na Instagramu", f_all:"Sve", f_wedding:"Vjenčanja", f_event:"Događaji", f_details:"Detalji", f_places:"Mjesta",
+    hero_cta:"Pošalji upit", hero_cta2:"Pogledaj radove",
+    lk_ask:"Pošalji upit", lk_see:"Pogledaj primjere", lk_more:"Saznaj više",
+    s1_t:"Vjenčanja", s1_p:"Od pripreme do posljednjeg plesa. Prirodno, emotivno, bez stresa.",
+    s2_t:"Događaji i muzika", s2_p:"Vjeridbe, rođendani, firmeni događaji i bendovi – kompletno u fotu i videu.",
+    s3_t:"Portreti i porodica", s3_p:"Snimanja za parove, porodice i portrete. Napolju ili u studiju.",
+    s4_t:"Mjesta i dron", s4_p:"Snimci iz zraka i 360° video za nekretnine, hotele i turizam.",
+    s5_t:"Montaža i boje", s5_p:"Korekcija boja, montaža i zvuk. Sve iz jedne ruke.",
+    pf_title:"Izabrani radovi. <span>Pravi trenuci.</span>", pf_view:"Sve na Instagramu",
+    f_wedding:"Vjenčanje", f_event:"Događaj", f_details:"Detalji", f_places:"Mjesta",
+    ab_head:"Iza kamere. <span>Adis Mustafi.</span>",
     ab_eyebrow:"O meni", ab_title:"Zdravo, ja sam Adis.",
     ab_p1:"Iza Mustafi Studija stojim ja – fotograf i videograf sa strašću za prave emocije. Radim nenametljivo, da vi možete uživati u svom danu.",
-    ab_p2:"Montažu, boje i zvuk radim sam – tako dobijate sve iz jedne ruke. Govorim njemački, albanski, bosanski i engleski.",
-    ct_eyebrow:"Kontakt", ct_title:"Ispričajte mi o svom projektu",
-    ct_lead:"Pišite mi na WhatsApp ili Instagram – javiću se što prije sa neobaveznom ponudom.",
+    ab_p2:"Montažu, boje i zvuk radim sam – tako dobijate sve iz jedne ruke.",
+    why1_t:"Jedna osoba", why1_p:"Foto i video od jedne osobe – bez usklađivanja više ekipa.", why2_t:"Jezika", why2_p:"Njemački, albanski, bosanski i engleski.", why3_t:"Zemlje", why3_p:"Švicarska i Kosovo – na upit širom svijeta.", why4_t:"Dron i 360°", why4_p:"Snimci iz zraka i 360° video za posebne perspektive.",
+    chk_title:"Da li je vaš datum još slobodan?", chk_sub:"Izaberite datum – odgovaram vam na WhatsAppu.", chk_btn:"Provjeri termin", chk_msg:"Zdravo Adise, da li ste slobodni ovog datuma:", skip:"Preskoči na sadržaj",
+    pr_title:"Kako sarađujemo. <span>U pet koraka.</span>",
+    st1_t:"Upit", st1_p:"Pišete mi na WhatsApp ili Instagram – datum, mjesto i vaše želje.",
+    st2_t:"Razgovor i ponuda", st2_p:"Sve dogovorimo lično i dobijate jasnu, neobaveznu ponudu.",
+    st3_t:"Dan snimanja", st3_p:"Na vrijeme sam na mjestu i bilježim sve – nenametljivo.",
+    st4_t:"Obrada", st4_p:"Odabir, korekcija boja, montaža i zvuk – sve iz jedne ruke.",
+    st5_t:"Isporuka", st5_p:"Fotografije i film dobijate digitalno, u punoj kvaliteti.",
+    fq_title:"Česta pitanja.",
+    q1:"Koliko košta fotografisanje ili film vjenčanja?", a1:"Svaka ponuda je individualna – zavisi od trajanja, mjesta i da li želite foto, video ili oboje. Pišite mi i dobićete neobaveznu ponudu.",
+    q2:"Da li putujete?", a2:"Da. Radim u cijeloj Švicarskoj i na Kosovu, a na upit i u drugim zemljama.",
+    q3:"Kada dobijam fotografije i film?", a3:"Zavisi od obima posla. Tačan rok isporuke dogovorimo unaprijed, da znate na čemu ste.",
+    q4:"Da li snimate i dronom i 360°?", a4:"Da – snimci iz zraka i 360° video, svugdje gdje je letenje dozvoljeno.",
+    q5:"Na kojim jezicima mogu razgovarati s vama?", a5:"Njemački, albanski, bosanski i engleski.",
+    ct_title:"Kontakt. <span>Radujem se vašoj poruci.</span>",
     ct_ch:"WhatsApp Švicarska", ct_xk:"WhatsApp Kosovo",
-    pr_eyebrow:"Kako radim", pr_title:"Kako sarađujemo", st1_t:"Upit", st1_p:"Pišete mi na WhatsApp ili Instagram – datum, mjesto i vaše želje.", st2_t:"Razgovor i ponuda", st2_p:"Sve dogovorimo lično i dobijate jasnu, neobaveznu ponudu.", st3_t:"Dan snimanja", st3_p:"Na vrijeme sam na mjestu i bilježim sve – nenametljivo, da vi uživate u danu.", st4_t:"Obrada", st4_p:"Odabir, korekcija boja, montaža i zvuk – sve iz jedne ruke.", st5_t:"Isporuka", st5_p:"Fotografije i film dobijate digitalno, u punoj kvaliteti.", fq_eyebrow:"Pitanja", fq_title:"Česta pitanja", q1:"Koliko košta fotografisanje ili film vjenčanja?", a1:"Svaka ponuda je individualna – zavisi od trajanja, mjesta i da li želite foto, video ili oboje. Pišite mi i dobićete neobaveznu ponudu.", q2:"Da li putujete?", a2:"Da. Radim u cijeloj Švicarskoj i na Kosovu, a na upit i u drugim zemljama.", q3:"Kada dobijam fotografije i film?", a3:"Zavisi od obima posla. Tačan rok isporuke dogovorimo unaprijed, da znate na čemu ste.", q4:"Da li snimate i dronom i 360°?", a4:"Da – snimci iz zraka i 360° video, svugdje gdje je letenje dozvoljeno.", q5:"Na kojim jezicima mogu razgovarati s vama?", a5:"Njemački, albanski, bosanski i engleski.",
-    ft_where:"Švicarska · Kosovo · na upit širom svijeta"
+    fm_title:"Brzi upit.", fm_sub:"Popunite i pošaljite – poruka se otvara spremna u WhatsAppu.",
+    fm_name:"Ime", fm_date:"Datum", fm_place:"Mjesto", fm_to:"Pošalji na", fm_msg:"Poruka (neobavezno)", fm_send:"Pošalji preko WhatsAppa",
+    fm_note:"Neobavezno i besplatno.",
+    wa_hi:"Zdravo Adise, zanima me", wa_date:"Datum", wa_place:"Mjesto", wa_name:"Ime", wa_any:"snimanje",
+    ft_note:"Sve fotografije na ovoj stranici su isječci. Cijele slike i reelse pogledajte na Instagramu @mustafi.studio.",
+    ft_rights:"Sva prava zadržana.", ft_where:"Švicarska · Kosovo · na upit širom svijeta"
   },
   en: {
-    nav_services:"Services", nav_portfolio:"Portfolio", nav_about:"About", nav_contact:"Contact",
-    hero_title:"Moments that <em>last</em>.",
+    nav_services:"Services", nav_portfolio:"Portfolio", nav_about:"About", nav_process:"Process", nav_faq:"FAQ", nav_contact:"Contact", nav_cta:"Enquire",
+    hero_title:"Moments that last.",
     hero_text:"Photo and video for weddings, events, portraits and places – in Switzerland and Kosovo.",
-    hero_cta:"Send a request", hero_cta2:"View portfolio",
-    sv_eyebrow:"Services", sv_title:"What I capture for you",
-    sv_lead:"From the first conversation to the finished film: professional shooting with modern gear and careful editing with colour grading.",
-    s1_t:"Weddings", s1_p:"Photos and a wedding film from getting ready to the last dance – natural, emotional, stress-free.",
-    s2_t:"Events & live music", s2_p:"Engagements, birthdays, corporate events and band performances – fully covered in photo and video.",
-    s3_t:"Portraits & family", s3_p:"Couple, family and portrait sessions outdoors or in the studio, with carefully edited images.",
-    s4_t:"Places, real estate & drone", s4_p:"Aerial footage, 360° video and photos for real estate, restaurants, hotels and tourism.",
-    pf_eyebrow:"Portfolio", pf_title:"Selected work",
-    pf_soon:"See all photos and reels in full quality on Instagram.", pf_view:"View on Instagram", f_all:"All", f_wedding:"Weddings", f_event:"Events", f_details:"Details", f_places:"Places",
+    hero_cta:"Send a request", hero_cta2:"View work",
+    lk_ask:"Enquire", lk_see:"See examples", lk_more:"Learn more",
+    s1_t:"Weddings", s1_p:"From getting ready to the last dance. Natural, emotional, stress-free.",
+    s2_t:"Events & live music", s2_p:"Engagements, birthdays, corporate events and bands – fully covered in photo and video.",
+    s3_t:"Portraits & family", s3_p:"Couple, family and portrait sessions. Outdoors or in the studio.",
+    s4_t:"Places & drone", s4_p:"Aerial footage and 360° video for real estate, hotels and tourism.",
+    s5_t:"Edit & colour", s5_p:"Colour grading, editing and sound. All from one hand.",
+    pf_title:"Selected work. <span>Real moments.</span>", pf_view:"See all on Instagram",
+    f_wedding:"Wedding", f_event:"Event", f_details:"Details", f_places:"Places",
+    ab_head:"Behind the camera. <span>Adis Mustafi.</span>",
     ab_eyebrow:"About", ab_title:"Hi, I'm Adis.",
     ab_p1:"I'm the person behind Mustafi Studio – a photographer and videographer with a passion for real emotions. I work quietly in the background so you can enjoy your day.",
-    ab_p2:"I do the editing, colour and sound myself, so you get everything from one hand. I speak German, Albanian, Bosnian and English.",
-    ct_eyebrow:"Contact", ct_title:"Tell me about your project",
-    ct_lead:"Just message me on WhatsApp or Instagram – I'll get back to you as soon as possible with a free quote.",
+    ab_p2:"I do the editing, colour and sound myself, so you get everything from one hand.",
+    why1_t:"Point of contact", why1_p:"Photo and video from one person – no coordinating between teams.", why2_t:"Languages", why2_p:"German, Albanian, Bosnian and English.", why3_t:"Countries", why3_p:"Switzerland and Kosovo – worldwide on request.", why4_t:"Drone & 360°", why4_p:"Aerial footage and 360° video for a different perspective.",
+    chk_title:"Is your date still available?", chk_sub:"Pick a date – I'll reply on WhatsApp.", chk_btn:"Check availability", chk_msg:"Hi Adis, are you available on this date:", skip:"Skip to content",
+    pr_title:"How we work together. <span>In five steps.</span>",
+    st1_t:"Request", st1_p:"Message me on WhatsApp or Instagram – date, place and what you have in mind.",
+    st2_t:"Call & quote", st2_p:"We talk everything through and you get a clear, no-obligation quote.",
+    st3_t:"Shoot day", st3_p:"I'm there on time and capture everything – quietly.",
+    st4_t:"Editing", st4_p:"Selection, colour grading, editing and sound – all from one hand.",
+    st5_t:"Delivery", st5_p:"You receive your photos and film digitally in full quality.",
+    fq_title:"Frequently asked questions.",
+    q1:"How much does a shoot or wedding film cost?", a1:"Every quote is individual – it depends on duration, location and whether you want photo, video or both. Message me for a free, no-obligation quote.",
+    q2:"Do you travel?", a2:"Yes. I work all over Switzerland and in Kosovo, and in other countries on request.",
+    q3:"When will I get my photos and film?", a3:"It depends on the size of the project. We agree on the exact delivery date in advance, so you know where you stand.",
+    q4:"Do you also shoot drone and 360° footage?", a4:"Yes – aerial footage and 360° video wherever flying is permitted.",
+    q5:"Which languages do you speak?", a5:"German, Albanian, Bosnian and English.",
+    ct_title:"Contact. <span>I'd love to hear from you.</span>",
     ct_ch:"WhatsApp Switzerland", ct_xk:"WhatsApp Kosovo",
-    pr_eyebrow:"Process", pr_title:"How we work together", st1_t:"Request", st1_p:"Message me on WhatsApp or Instagram – date, place and what you have in mind.", st2_t:"Call & quote", st2_p:"We talk everything through and you get a clear, no-obligation quote.", st3_t:"Shoot day", st3_p:"I'm there on time and capture everything – quietly, so you can enjoy your day.", st4_t:"Editing", st4_p:"Selection, colour grading, editing and sound – all from one hand.", st5_t:"Delivery", st5_p:"You receive your photos and film digitally in full quality.", fq_eyebrow:"FAQ", fq_title:"Frequently asked questions", q1:"How much does a shoot or wedding film cost?", a1:"Every quote is individual – it depends on duration, location and whether you want photo, video or both. Message me for a free, no-obligation quote.", q2:"Do you travel?", a2:"Yes. I work all over Switzerland and in Kosovo, and in other countries on request.", q3:"When will I get my photos and film?", a3:"It depends on the size of the project. We agree on the exact delivery date in advance, so you know where you stand.", q4:"Do you also shoot drone and 360° footage?", a4:"Yes – aerial footage and 360° video wherever flying is permitted.", q5:"Which languages do you speak?", a5:"German, Albanian, Bosnian and English.",
-    ft_where:"Switzerland · Kosovo · worldwide on request"
+    fm_title:"Quick request.", fm_sub:"Fill in and send – your message opens ready to go in WhatsApp.",
+    fm_name:"Name", fm_date:"Date", fm_place:"Location", fm_to:"Send to", fm_msg:"Message (optional)", fm_send:"Send via WhatsApp",
+    fm_note:"Free and without obligation.",
+    wa_hi:"Hi Adis, I'm interested in", wa_date:"Date", wa_place:"Location", wa_name:"Name", wa_any:"a shoot",
+    ft_note:"All photos on this page are crops. See the full images and reels on Instagram @mustafi.studio.",
+    ft_rights:"All rights reserved.", ft_where:"Switzerland · Kosovo · worldwide on request"
   }
 };
 
+let lang = "de";
 function setLang(l) {
   if (!T[l]) l = "de";
+  lang = l;
   document.documentElement.lang = l;
   document.querySelectorAll("[data-i]").forEach(el => { el.innerHTML = T[l][el.dataset.i] ?? ""; });
   document.querySelectorAll("#langs button").forEach(b => b.classList.toggle("active", b.dataset.l === l));
   try { localStorage.setItem("lang", l); } catch (e) {}
 }
+
+// Karusel
+const grid = document.getElementById("grid");
+PHOTOS.forEach(([f, cat, size]) => {
+  const a = document.createElement("a");
+  a.href = INSTAGRAM; a.target = "_blank"; a.rel = "noopener";
+  a.className = "card" + (size ? " " + size : "");
+  a.innerHTML = `<img src="img/pf/${f}.jpg" alt="Mustafi Studio" loading="lazy"><div class="cap"><small data-i="${cat}"></small><b>Mustafi Studio</b></div>`;
+  grid.appendChild(a);
+});
+const step = () => grid.querySelector(".card").offsetWidth + 20;
+document.getElementById("prev").onclick = () => grid.scrollBy({ left: -step(), behavior: "smooth" });
+document.getElementById("next").onclick = () => grid.scrollBy({ left: step(), behavior: "smooth" });
+
 document.querySelectorAll("#langs button").forEach(b => b.onclick = () => setLang(b.dataset.l));
-let start = "de";
+let start = "";
 try { start = localStorage.getItem("lang") || ""; } catch (e) {}
-if (!start) {
-  const nav = (navigator.language || "de").slice(0, 2);
-  start = { de: "de", sq: "sq", bs: "bs", sr: "bs", hr: "bs", en: "en" }[nav] || "de";
-}
+if (!start) start = { de: "de", sq: "sq", bs: "bs", sr: "bs", hr: "bs", en: "en" }[(navigator.language || "de").slice(0, 2)] || "de";
 setLang(start);
 
-// Galerie
-const IG_ICON = '<svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/><path d="M16 2H8a6 6 0 0 0-6 6v8a6 6 0 0 0 6 6h8a6 6 0 0 0 6-6V8a6 6 0 0 0-6-6Zm4 14a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8Z"/></svg>';
-const grid = document.getElementById("grid");
-PHOTOS.forEach(([f, c]) => {
-  const fig = document.createElement("figure");
-  fig.dataset.c = c;
-  fig.innerHTML = `<a href="${INSTAGRAM}" target="_blank" rel="noopener"><img src="img/pf/${f}.jpg" alt="Mustafi Studio" loading="lazy"><span>${IG_ICON}<b data-i="pf_view">${T[document.documentElement.lang].pf_view}</b></span></a>`;
-  grid.appendChild(fig);
-});
-document.querySelectorAll("#filters button").forEach(b => b.onclick = () => {
-  document.querySelectorAll("#filters button").forEach(x => x.classList.toggle("active", x === b));
-  grid.querySelectorAll("figure").forEach(fig => fig.classList.toggle("hide", b.dataset.f !== "all" && fig.dataset.c !== b.dataset.f));
-});
+// Upit preko WhatsAppa
+document.getElementById("inquiry").onsubmit = e => {
+  e.preventDefault();
+  const t = T[lang], v = id => document.getElementById(id).value.trim();
+  const picked = [...document.querySelectorAll("#chips input:checked")].map(i => t[i.value]);
+  const lines = [`${t.wa_hi} ${picked.length ? picked.join(", ") : t.wa_any}.`];
+  if (v("fDate")) lines.push(`${t.wa_date}: ${v("fDate").split("-").reverse().join(".")}`);
+  if (v("fPlace")) lines.push(`${t.wa_place}: ${v("fPlace")}`);
+  if (v("fMsg")) lines.push("", v("fMsg"));
+  if (v("fName")) lines.push("", `${t.wa_name}: ${v("fName")}`);
+  window.open(`https://wa.me/${v("fTo")}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+};
+
+// Provjera datuma
+document.getElementById("dateCheck").onsubmit = e => {
+  e.preventDefault();
+  const d = document.getElementById("chkDate").value.split("-").reverse().join(".");
+  window.open(`https://wa.me/41798288648?text=${encodeURIComponent(`${T[lang].chk_msg} ${d}?`)}`, "_blank", "noopener");
+};
+
+// Traka na mobitelu se skriva kod kontakta
+const mbar = document.getElementById("mbar");
+if ("IntersectionObserver" in window) new IntersectionObserver(es => mbar.classList.toggle("away", es[0].isIntersecting)).observe(document.getElementById("contact"));
 
 // Navigacija
-const header = document.querySelector("header"), menu = document.getElementById("menu");
-addEventListener("scroll", () => header.classList.toggle("scrolled", scrollY > 40), { passive: true });
-document.getElementById("menuBtn").onclick = () => menu.classList.toggle("open");
-menu.querySelectorAll("a").forEach(a => a.onclick = () => menu.classList.remove("open"));
-document.getElementById("filters").hidden = PHOTOS.length === 0;
+const menuBtn = document.getElementById("menuBtn");
+menuBtn.onclick = () => menuBtn.setAttribute("aria-expanded", document.body.classList.toggle("menu-open"));
+document.querySelectorAll("#menu a").forEach(a => a.onclick = () => { document.body.classList.remove("menu-open"); menuBtn.setAttribute("aria-expanded", "false"); });
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+} else document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
 </script>
 </body>
 </html>
